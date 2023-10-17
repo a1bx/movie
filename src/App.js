@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 
 import MovieCard from "./moviecard";
-import SearchIcon from "./search.svg";
 import "./App.css";
 
 const API_URL = "http://www.omdbapi.com?apikey=e290cf78";
@@ -32,7 +31,7 @@ const App = () => {
           placeholder="Movies"
         />
         <img
-          src={SearchIcon}
+          src= "https://freeiconshop.com/wp-content/uploads/edd/search-outline.png"
           alt="search"
           onClick={() => searchMovies(searchTerm)}
         />
