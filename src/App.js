@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
+// import input from "react";
 
 import MovieCard from "./moviecard";
 import "./App.css";
+
+// input = document.getElementById("search");
 
 const API_URL = "http://www.omdbapi.com?apikey=e290cf78";
 
@@ -19,6 +22,13 @@ const App = () => {
 
     setMovies(data.Search);
   };
+
+  // input.addEventListener("keypress", function(event) {
+  //   if (event.key === "Enter") {
+  //     event.preventDefault();
+  //     document.getElementById("search").click();
+  //   }
+  // });
 
   return (
     <div className="app">
