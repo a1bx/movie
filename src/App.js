@@ -6,7 +6,7 @@ import "./App.css";
 
 // input = document.getElementById("search");
 
-const API_URL = "http://www.omdbapi.com?apikey=e290cf78";
+const API_URL = "9fc83f4b4ecffacae057e947953eb886";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
@@ -22,7 +22,8 @@ const App = () => {
 
     setMovies(data.Search);
   };
-
+  //http://www.omdbapi.com?apikey=e290cf78
+  //9fc83f4b4ecffacae057e947953eb886
   // input.addEventListener("keypress", function(event) {
   //   if (event.key === "Enter") {
   //     event.preventDefault();
