@@ -6,7 +6,7 @@ import "./App.css";
 
 // input = document.getElementById("search");
 
-const API_URL = "9fc83f4b4ecffacae057e947953eb886";
+const API_URL = "https://api.themoviedb.org/3/movie/550?api_key=9fc83f4b4ecffacae057e947953eb886";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
