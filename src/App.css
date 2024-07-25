@@ -64,10 +64,11 @@ h1 {
   background: #1f2123;
 }
 
-.search img {
+.search svg {
   width: 35px;
   height: 35px;
   cursor: pointer;
+  color: #f9d3b4;
 }
 
 .empty {
@@ -220,5 +221,30 @@ h1 {
   .movie {
     width: "100%";
     margin: 1rem;
+  }
+}
+.loader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border-left-color: #f9d3b4;
+  animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }
