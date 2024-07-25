@@ -19,7 +19,6 @@ body {
 
 .app {
   padding: 4rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,11 +42,9 @@ h1 {
 .search {
   width: 70%;
   margin: 2rem 0 2rem;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   padding: 1.5rem 1.5rem;
   border-radius: 3rem;
   background: #1f2123;
@@ -62,7 +59,6 @@ h1 {
   font-family: var(--font-raleway);
   font-weight: 200;
   padding-right: 0.5rem;
-
   outline: none;
   color: #a1a1a1;
   background: #1f2123;
@@ -74,11 +70,9 @@ h1 {
   cursor: pointer;
 }
 
-
 .empty {
   width: 100%;
   margin-top: 3rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -93,7 +87,6 @@ h1 {
 .container {
   width: 100%;
   margin-top: 3rem;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,12 +97,10 @@ h1 {
   width: 300px;
   height: 460px;
   margin: 1.5rem;
-
   position: relative;
   border-radius: 12px;
   overflow: hidden;
   border: none;
-
   transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
   box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
 }
@@ -142,7 +133,6 @@ h1 {
   z-index: 2;
   background-color: #343739;
   padding: 16px 24px 24px 24px;
-
   position: absolute;
   bottom: 0;
   right: 0;
@@ -174,6 +164,23 @@ h1 {
 }
 
 .movie:hover div:nth-of-type(1) {
+  opacity: 1;
+}
+
+.movie-rating {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  font-family: var(--font-raleway);
+  font-size: 1rem;
+  color: #f9d3b4;
+  margin-left:0.8rem;
+  margin-top: 1rem;
+}
+
+.movie:hover .movie-rating {
   opacity: 1;
 }
 
