@@ -1,62 +1,74 @@
 import React, { useState, useEffect } from "react";
-// import input from "react";
-
 import MovieCard from "./moviecard";
+import SearchIcon from "./search.svg";
 import "./App.css";
 
-// input = document.getElementById("search");
-
-const API_URL = "https://api.themoviedb.org/3/movie/550?api_key=9fc83f4b4ecffacae057e947953eb886";
+const API_KEY = "9fc83f4b4ecffacae057e947953eb886";
+const BASE_URL = "https://api.themoviedb.org/3";
 
 const App = () => {
   const [searchTerm, setSearchTerm] = useState('');
   const [movies, setMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    searchMovies("The Batman");
+    searchMovies("Batman");
   }, []);
 
   const searchMovies = async (title) => {
-    const response = await fetch(`${API_URL}&s=${title}`);
-    const data = await response.json();
-
-    setMovies(data.Search);
+    setIsLoading(true);
+    try {
+      const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${title}`);
+      const data = await response.json();
+      setMovies(data.results);
+    } catch (error) {
+      console.error("Error searching movies:", error);
+    } finally {
+      setIsLoading(false);
+    }
   };
-  //http://www.omdbapi.com?apikey=e290cf78
-  //9fc83f4b4ecffacae057e947953eb886
-  // input.addEventListener("keypress", function(event) {
-  //   if (event.key === "Enter") {
-  //     event.preventDefault();
-  //     document.getElementById("search").click();
-  //   }
-  // });
+
+  const handleSearch = () => {
+    if (searchTerm.trim()) {
+      searchMovies(searchTerm);
+    }
+  };
+
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
 
   return (
     <div className="app">
-      <h1>Movie arcade</h1>
+      <h1>Movie Arcade</h1>
 
       <div className="search">
         <input
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-          placeholder="Movies"
+          onKeyPress={handleKeyPress}
+          placeholder="Search for movies"
         />
         <img
-          src= "https://freeiconshop.com/wp-content/uploads/edd/search-outline.png"
+          src={SearchIcon}
           alt="search"
-          onClick={() => searchMovies(searchTerm)}
+          onClick={handleSearch}
         />
       </div>
 
-      {movies?.length > 0 ? (
+      {isLoading ? (
+        <div className="loader">Loading...</div>
+      ) : movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
-            <MovieCard movie={movie} />
+            <MovieCard key={movie.id} movie={movie} />
           ))}
         </div>
       ) : (
         <div className="empty">
-          <h3>No movies found</h3>
+          <h2>No movies found</h2>
         </div>
       )}
     </div>
