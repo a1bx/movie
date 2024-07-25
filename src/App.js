@@ -59,7 +59,10 @@ const App = () => {
       </div>
 
       {isLoading ? (
-        <div className="loader">Loading...</div>
+        <div className="loader">
+          <div className="spinner"></div>
+          <p>Loading movies...</p>
+        </div>
       ) : movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie) => (
