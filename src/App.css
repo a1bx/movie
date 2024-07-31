@@ -177,7 +177,7 @@ h1 {
   font-family: var(--font-raleway);
   font-size: 1rem;
   color: #f9d3b4;
-  margin-left:0.8rem;
+  margin-left: 0.8rem;
   margin-top: 1rem;
 }
 
@@ -223,6 +223,7 @@ h1 {
     margin: 1rem;
   }
 }
+
 .loader {
   display: flex;
   flex-direction: column;
@@ -251,12 +252,12 @@ h1 {
 
 .movie.expanded {
   transform: scale(1.05);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .movie-expanded {
   padding: 15px;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.8);
   color: white;
 }
 
@@ -271,6 +272,20 @@ h1 {
   line-height: 1.4;
   font-family: var(--font-roboto);
 }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
 .modal-content {
   background-color: #1f2123;
   padding: 2rem;
