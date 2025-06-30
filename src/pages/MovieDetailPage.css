@@ -1,0 +1,304 @@
+/* === General === */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0b0b0b;
+  color: #fff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 2;
+}
+
+/* === Hero Section === */
+
+.hero {
+  position: relative;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), #000);
+  z-index: 1;
+}
+
+/* === Back Button === */
+
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 3;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* === Poster & Details === */
+
+.details-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: -180px;
+  padding-bottom: 40px;
+}
+
+@media (min-width: 768px) {
+  .details-wrapper {
+    flex-direction: row;
+  }
+}
+
+.poster {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+}
+
+.info {
+  flex: 1;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.tagline {
+  font-style: italic;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+
+.genres {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.genre {
+  background: #2c2c2c;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* === Stats === */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.stats label {
+  color: #999;
+  font-size: 0.9rem;
+}
+
+.stats strong {
+  font-size: 1.1rem;
+}
+
+/* === Overview & Companies === */
+
+.overview,
+.companies {
+  margin-bottom: 32px;
+}
+
+.production-logos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+
+.production-logos img {
+  height: 32px;
+  object-fit: contain;
+}
+
+/* === Watch Trailer Button === */
+
+.watch-trailer-btn {
+  background: #e50914;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* === Cast Section === */
+
+.cast-section {
+  margin-top: 50px;
+}
+
+.cast-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+}
+
+.cast-carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.cast-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.cast-card {
+  flex: 0 0 auto;
+  width: 140px;
+  background-color: #151515;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.2s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+}
+
+.cast-card:hover {
+  transform: translateY(-5px);
+}
+
+.cast-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-bottom: 1px solid #222;
+}
+
+.cast-card .actor-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 10px 6px 4px;
+  color: #ffffff;
+}
+
+.cast-card .character-name {
+  font-size: 0.8rem;
+  color: #bbbbbb;
+  padding-bottom: 10px;
+  padding: 0 6px 10px;
+}
+
+/* Responsive scaling */
+@media (max-width: 768px) {
+  .cast-card {
+    width: 110px;
+  }
+
+  .cast-card img {
+    height: 150px;
+  }
+
+  .cast-card .actor-name {
+    font-size: 0.85rem;
+  }
+
+  .cast-card .character-name {
+    font-size: 0.75rem;
+  }
+}
+
+
+/* === Modal === */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  width: 90%;
+  max-width: 800px;
+  height: 60vh;
+  background: #000;
+  position: relative;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* === Scroll to Top === */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: #e50914;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 1.4rem;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* === Loading & Error States === */
+
+.loading,
+.error {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.error button {
+  margin-top: 20px;
+  padding: 10px 16px;
+  background: #444;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
